@@ -287,7 +287,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
 
 ### [bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
 ```bash
-# Hence, ssh with inline command becuase of auto logout by .bashrc.
+# ssh with inline command because of auto logout by .bashrc.
 $ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat readme'
 
 bandit18@bandit.labs.overthewire.org s password:
