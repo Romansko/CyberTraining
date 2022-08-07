@@ -224,11 +224,80 @@ bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
 
 
 ### [bandit15](https://overthewire.org/wargames/bandit/bandit15.html)
-```
+```bash
 $ ssh bandit14@bandit.labs.overthewire.org -p 2220
 
-TBD
+# nc can be replaced by telnet
+bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e                     # submitted bandit14's password.
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr                     # bandit15's password.
 ```
 
 
+### [bandit16](https://overthewire.org/wargames/bandit/bandit16.html)
+```bash
+$ ssh bandit15@bandit.labs.overthewire.org -p 2220
 
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+# blah blah..
+BfMYroe26WYalil77FoDi9qh59eK5xNr                     # submitted bandit15's password.
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd                     # bandit16's password.
+```
+
+
+### [bandit17](https://overthewire.org/wargames/bandit/bandit17.html)
+```bash
+$ ssh bandit16@bandit.labs.overthewire.org -p 2220
+
+# use -sV for version detection and --version-intensity 1 is enough for ssl.
+bandit16@bandit:~$ nmap -p 31000-32000 -sV --version-intensity 1 localhost
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2022-08-07 21:13 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00032s latency).
+Not shown: 996 closed ports
+PORT      STATE    SERVICE     VERSION
+31046/tcp open     unknown
+31518/tcp filtered unknown
+31691/tcp open     unknown
+31790/tcp open     ssl/unknown     # <--- our target.
+31960/tcp open     unknown
+# blah blah..
+
+bandit16@bandit:~$ openssl s_client -connect localhost:31790
+# blah blah..
+cluFn7wTiGryunymYOu4RcffSxQluehd
+Correct!
+# [RSA KEY], copied to clipboard, pasted on host.
+
+$ chmod 600 sshkey.private   # owner access only.
+```
+
+
+### [bandit18](https://overthewire.org/wargames/bandit/bandit18.html)
+```bash
+$ ssh -i sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
+
+bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
+> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd                   # bandit18's password.
+```
+
+
+### [bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
+```bash
+# Hence, ssh with inline command becuase of auto logout by .bashrc.
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat readme'
+
+bandit18@bandit.labs.overthewire.org s password:
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x                     # bandit19's password.
+```
+
+
+### [bandit20](https://overthewire.org/wargames/bandit/bandit20.html)
+```bash
+$ ssh bandit19@bandit.labs.overthewire.org -p 2220
+
+# TBD
+```
