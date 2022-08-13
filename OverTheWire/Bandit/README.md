@@ -19,11 +19,14 @@ $ ssh banditX@bandit.labs.overthewire.org -p 2220    # X = level number
 ```bash
 $ ssh banditX@localhost   # from within bandit machine. X = level number.
 ```
+<br />
+
 
 ### [bandit0](https://overthewire.org/wargames/bandit/bandit0.html)
 ```bash
 # bandit0 = password.
 ```
+<br />
 
 
 ### [bandit1](https://overthewire.org/wargames/bandit/bandit1.html)
@@ -33,6 +36,7 @@ $ ssh bandit0@bandit.labs.overthewire.org -p 2220
 bandit0@bandit:~$ cat ~/readme
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1                     # bandit1's passsword.
 ```
+<br />
 
 
 ### [bandit2](https://overthewire.org/wargames/bandit/bandit2.html)
@@ -42,6 +46,7 @@ $ ssh bandit1@bandit.labs.overthewire.org -p 2220
 bandit1@bandit:~$ cat ~/-
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9                     # bandit2's passsword.
 ```
+<br />
 
 
 ### [bandit3](https://overthewire.org/wargames/bandit/bandit3.html)
@@ -51,6 +56,7 @@ $ ssh bandit2@bandit.labs.overthewire.org -p 2220
 bandit2@bandit:~$ cat ~/'spaces in this filename'
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK                     # bandit3's password.
 ```
+<br />
 
 
 ### [bandit4](https://overthewire.org/wargames/bandit/bandit4.html)
@@ -62,6 +68,7 @@ bandit3@bandit:~$ ls -a ~/inhere
 bandit3@bandit:~$ cat ~/inhere/.hidden
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB                     # bandit4's password.
 ```
+<br />
 
 
 ### [bandit5](https://overthewire.org/wargames/bandit/bandit5.html)
@@ -83,6 +90,7 @@ bandit4@bandit:~$ file ~/inhere/*
 bandit4@bandit:~$ cat ~/inhere/-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh                     # bandit5's password.
 ```
+<br />
 
 
 ### [bandit6](https://overthewire.org/wargames/bandit/bandit6.html)
@@ -98,6 +106,7 @@ bandit5@bandit:~$ file ~/inhere/maybehere07/.file2
 bandit5@bandit:~$ cat ~/inhere/maybehere07/.file2 | grep . 
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7                     # bandit6's password.
 ```
+<br />
 
 
 ### [bandit7](https://overthewire.org/wargames/bandit/bandit7.html)
@@ -111,6 +120,7 @@ bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c -print 2>/dev/nu
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs                     # bandit7's password.
 ```
+<br />
 
 
 ### [bandit8](https://overthewire.org/wargames/bandit/bandit8.html)
@@ -120,6 +130,7 @@ $ ssh bandit7@bandit.labs.overthewire.org -p 2220
 bandit7@bandit:~$ cat ~/data.txt | grep millionth
 millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV     # bandit8's password.
 ```
+<br />
 
 
 ### [bandit9](https://overthewire.org/wargames/bandit/bandit9.html)
@@ -129,6 +140,7 @@ $ ssh bandit8@bandit.labs.overthewire.org -p 2220
 bandit8@bandit:~$ sort ~/data.txt | uniq -u
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR                     # bandit9's password.
 ```
+<br />
 
 
 ### [bandit10](https://overthewire.org/wargames/bandit/bandit10.html)
@@ -142,6 +154,7 @@ bandit9@bandit:~$ strings ~/data.txt | grep -E '==+'
 Z)========== is
 &========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk         # bandit10's password.
 ```
+<br />
 
 
 ### [bandit11](https://overthewire.org/wargames/bandit/bandit11.html)
@@ -151,6 +164,7 @@ $ ssh bandit10@bandit.labs.overthewire.org -p 2220
 bandit10@bandit:~$ base64 -d ~/data.txt 
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR     # bandit11's password.
 ```
+<br />
 
 
 ### [bandit12](https://overthewire.org/wargames/bandit/bandit12.html)
@@ -167,6 +181,7 @@ a -> n
 bandit11@bandit:~$ cat ~/data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'
 The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu     # bandit12's password.
 ```
+<br />
 
 
 ### [bandit13](https://overthewire.org/wargames/bandit/bandit13.html)
@@ -207,7 +222,10 @@ bandit12@bandit:/tmp/bt12$ gzip -dc data | bzip2 -dc | gzip -dc | tar -xO | tar 
 
 bandit12@bandit:/tmp/bt12$ gzip -dc data | bzip2 -dc | gzip -dc | tar -xO | tar -xO | bzip2 -dc | tar -xO | gzip -dc 
 The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL     # bandit13's password.
+
+bandit12@bandit:~$ rm -rf /tmp/bt12
 ```
+<br />
 
 
 ### [bandit14](https://overthewire.org/wargames/bandit/bandit14.html)
@@ -221,6 +239,7 @@ bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
 bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e                     # bandit14's password.
 ```
+<br />
 
 
 ### [bandit15](https://overthewire.org/wargames/bandit/bandit15.html)
@@ -233,6 +252,7 @@ bandit14@bandit:~$ nc localhost 30000
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr                     # bandit15's password.
 ```
+<br />
 
 
 ### [bandit16](https://overthewire.org/wargames/bandit/bandit16.html)
@@ -245,6 +265,7 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr                     # submitted bandit15's pass
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd                     # bandit16's password.
 ```
+<br />
 
 
 ### [bandit17](https://overthewire.org/wargames/bandit/bandit17.html)
@@ -274,6 +295,7 @@ Correct!
 
 $ chmod 600 sshkey.private   # owner access only.
 ```
+<br />
 
 
 ### [bandit18](https://overthewire.org/wargames/bandit/bandit18.html)
@@ -283,6 +305,7 @@ $ ssh -i sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
 bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
 > kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd                   # bandit18's password.
 ```
+<br />
 
 
 ### [bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
@@ -293,6 +316,7 @@ $ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat readme'
 bandit18@bandit.labs.overthewire.org s password:
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x                     # bandit19's password.
 ```
+<br />
 
 
 ### [bandit20](https://overthewire.org/wargames/bandit/bandit20.html)
@@ -316,6 +340,7 @@ Run a command as another user.
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j                     # bandit20's password.
 ```
+<br />
 
 
 ### [bandit21](https://overthewire.org/wargames/bandit/bandit21.html)
@@ -356,6 +381,7 @@ bandit20@bandit:~$ tmux kill-server
 bandit20@bandit:~$ tmux ls
 no server running on /tmp/tmux-11020/default
 ```
+<br />
 
 
 ### [bandit22](https://overthewire.org/wargames/bandit/bandit22.html)
@@ -382,6 +408,7 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI                     # bandit22's password.
 ```
+<br />
 
 
 ### [bandit23](https://overthewire.org/wargames/bandit/bandit23.html)
@@ -418,6 +445,7 @@ Copying passwordfile /etc/bandit_pass/bandit22 to /tmp/8169b67bd894ddbb4412f9157
 bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n                     # bandit23's password.
 ```
+<br />
 
 
 ### [bandit24](https://overthewire.org/wargames/bandit/bandit24.html)
@@ -461,21 +489,360 @@ bandit23@bandit:~$ cd /tmp/12082022
 bandit23@bandit:/tmp/12082022$ touch password
 bandit23@bandit:/tmp/12082022$ chmod 666 password     # rw for all
 bandit23@bandit:/tmp/12082022$ vim script.sh
+```
+
+```bash
 #!/bin/bash
 cat /etc/bandit_pass/bandit24 > /tmp/12082022/password
+```
 
+```bash
 bandit23@bandit:/tmp/12082022$ chmod 777 script.sh    # rwx for all
 bandit23@bandit:/tmp/12082022$ cp script.sh /var/spool/bandit24/
 
 # script will be executed after 60 seconds..
 bandit23@bandit:/tmp/12082022$ cat password
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ                     # bandit24's password.
+
+bandit23@bandit:~$ rm -rf /tmp/12082022
 ``` 
+<br />
 
 
 ### [bandit25](https://overthewire.org/wargames/bandit/bandit25.html)
 ```bash
 $ ssh bandit24@bandit.labs.overthewire.org -p 2220
 
-# TBD
+bandit24@bandit:~$ mkdir /tmp/13082022
+bandit24@bandit:~$ cd /tmp/13082022
+bandit24@bandit:/tmp/13082022$ vim script.sh
+```
+
+```bash
+#!/bin/bash
+
+# generate input file
+for i in {0..9999}
+do
+    echo $i | awk '{printf "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ %04d\n", $0}' >> input.txt
+done
+
+# nc the file
+nc localhost 30002 < input.txt | grep -v -e "Wrong"
+```
+
+```bash
+bandit24@bandit:/tmp/13082022$ chmod +x ./script.sh
+bandit24@bandit:/tmp/13082022$ ./script.sh
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+Exiting.
+
+bandit24@bandit:~$ rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit26](https://overthewire.org/wargames/bandit/bandit26.html)
+```bash
+$ ssh bandit25@bandit.labs.overthewire.org -p 2220
+
+# List available shells
+bandit25@bandit:~$ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/screen
+/usr/bin/tmux
+/usr/bin/showtext
+
+# # find bandit25's login shell.
+bandit25@bandit:~$ cat /etc/passwd | grep bandit26
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+bandit25@bandit:~$ cat /usr/bin/showtext
+#!/bin/sh
+export TERM=linux
+more ~/text.txt
+exit 0
+```
+
+Upon ssh bandit26, the connection is closed, not before printing bandit26 logo from text.txt by `more`. We will resize terminal to smaller screen and then:
+
+```bash
+bandit25@bandit:~$ ls
+bandit26.sshkey
+
+bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost
+```
+
+Now that the connection is not closed yet, we will press `v` to enter `vi`. Then, in command mode, we will type `:r /etc/bandit_pass/bandit26` followed by enter. We will receive bandit26's password: `5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z`.
+
+<br />
+
+
+### [bandit27](https://overthewire.org/wargames/bandit/bandit27.html)
+```bash
+# login to bandit25 first
+$ ssh bandit25@bandit.labs.overthewire.org -p 2220
+
+# similar to bandit20, will want to invoke /home/bandit27-do cat /etc/bandit_pass/bandit27
+# Enter vi by doing the same trick as in bandit 26.
+$ ssh -i bandit26.sshkey bandit26@localhost   # with small terminal, press v to enter vi.
+
+# After entering vi, resize to normal and set the default bash within command mode.
+:set shell=/bin/bash 
+:shell    # open default shell.
+
+# list bandit26's files
+bandit26@bandit:~$ ls
+bandit27-do  text.txt
+
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea                     # bandit27's password.
+```
+<br />
+
+
+
+### [bandit28](https://overthewire.org/wargames/bandit/bandit28.html)
+```bash
+$ ssh bandit27@bandit.labs.overthewire.org -p 2220
+
+# clone the repo.
+bandit27@bandit:~$ mkdir /tmp/13082022
+bandit27@bandit:~$ cd /tmp/13082022
+bandit27@bandit:/tmp/13082022$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+```
+```
+Cloning into 'repo'...
+...
+bandit27-git@localhost's password:
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+```
+```bash
+# read bandit28's password.
+bandit27@bandit:/tmp/13082022$ ls repo
+README
+bandit27@bandit:/tmp/13082022$ cat repo/README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+
+bandit27@bandit:~$ rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit29](https://overthewire.org/wargames/bandit/bandit29.html)
+```bash
+$ ssh bandit28@bandit.labs.overthewire.org -p 2220
+
+bandit28@bandit:~$ mkdir /tmp/13082022
+bandit28@bandit:~$ cd /tmp/13082022
+bandit28@bandit:/tmp/13082022$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+```
+```
+Cloning into 'repo'...
+...
+bandit28-git@localhost's password:
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (2/2), done.
+```
+```bash
+bandit28@bandit:/tmp/13082022$ cd repo
+bandit28@bandit:/tmp/13082022/repo$ git log
+```
+```
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+commit c086d11a00c0648d095d04c089786efef5e01264
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    add missing data
+
+commit de2ebe2d5fd1598cd547f4d56247e053be3fdc38
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    initial commit of README.md
+```
+```bash
+bandit28@bandit:/tmp/13082022/repo$ git checkout c086d11a00c0648d095d04c089786efef5e01264
+Previous HEAD position was de2ebe2... initial commit of README.md
+HEAD is now at c086d11... add missing data
+
+bandit28@bandit:/tmp/13082022/repo$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: bbc96594b4e001778eee9975372716b2         # bandit29's password.
+
+bandit27@bandit:~$ rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit30](https://overthewire.org/wargames/bandit/bandit30.html)
+```bash
+$ ssh bandit29@bandit.labs.overthewire.org -p 2220
+
+bandit29@bandit:~$ mkdir /tmp/13082022 && cd /tmp/13082022
+bandit29@bandit:/tmp/13082022$ git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+```
+```
+Cloning into 'repo'...
+...
+bandit29-git@localhost's password:
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 16 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (2/2), done.
+```
+```bash
+bandit29@bandit:/tmp/13082022$ cd repo
+bandit29@bandit:/tmp/13082022/repo$ ls
+README.md
+bandit29@bandit:/tmp/13082022/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+
+# list remote branches
+bandit29@bandit:/tmp/13082022/repo$ git branch -r
+  origin/HEAD -> origin/master
+  origin/dev
+  origin/master
+  origin/sploits-dev
+
+bandit29@bandit:/tmp/13082022/repo$ git checkout origin/dev
+Note: checking out 'origin/dev'.
+...
+
+bandit29@bandit:/tmp/13082022/repo$ ls
+code  README.md
+bandit29@bandit:/tmp/13082022/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf                  # bandit30's password.
+
+bandit29@bandit:/tmp$ cd ~/
+bandit29@bandit:~$ rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit31](https://overthewire.org/wargames/bandit/bandit31.html)
+```bash
+$ ssh bandit30@bandit.labs.overthewire.org -p 2220
+
+bandit30@bandit:~$ mkdir /tmp/13082022 && cd /tmp/13082022
+bandit30@bandit:/tmp/13082022$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo && cd repo
+Cloning into 'repo'...
+
+bandit30@bandit:/tmp/13082022/repo$ git tag
+secret
+
+bandit30@bandit:/tmp/13082022/repo$ git show secret
+47e603bb428404d265f59c42920d81e5                  # bandit31's password.
+
+bandit30@bandit:/tmp/13082022/repo$ cd ~/ && rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit32](https://overthewire.org/wargames/bandit/bandit32.html)
+```bash
+$ ssh bandit31@bandit.labs.overthewire.org -p 2220
+
+bandit31@bandit:~$ mkdir /tmp/13082022 && cd /tmp/13082022
+bandit31@bandit:/tmp/13082022$ ssh://bandit31-git@localhost/home/bandit31-git/repo && cd repo
+-bash: ssh://bandit31-git@localhost/home/bandit31-git/repo: No such file or directory
+bandit31@bandit:/tmp/13082022$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo && cd repo
+Cloning into 'repo'...
+
+bandit31@bandit:/tmp/13082022/repo$ ls
+README.md
+bandit31@bandit:/tmp/13082022/repo$ cat README.md
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt
+    Content: 'May I come in?'
+    Branch: master
+
+bandit31@bandit:/tmp/13082022/repo$ echo 'May I come in?' > key.txt
+
+bandit31@bandit:/tmp/13082022/repo$ git add key.txt
+
+The following paths are ignored by one of your .gitignore files:
+key.txt
+Use -f if you really want to add them.
+
+bandit31@bandit:/tmp/13082022/repo$ git add -f key.txt
+
+bandit31@bandit:/tmp/13082022/repo$ git commit -m "key"
+[master 2b2ff3c] key
+ 1 file changed, 1 insertion(+)
+ create mode 100644 key.txt
+
+bandit31@bandit:/tmp/13082022/repo$ git push
+...
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e             # bandit32's password.
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+...
+
+bandit31@bandit:/tmp/13082022/repo$ cd ~/ && rm -rf /tmp/13082022
+```
+<br />
+
+
+### [bandit33](https://overthewire.org/wargames/bandit/bandit33.html)
+```bash
+# login with bandit31 first
+$ ssh bandit31@bandit.labs.overthewire.org -p 2220
+
+bandit31@bandit:~$ cat /etc/passwd | grep bandit32
+bandit32:x:11032:11032:bandit level 32:/home/bandit32:/home/bandit32/uppershell
+
+# login to bandit32
+$ ssh bandit32@bandit.labs.overthewire.org -p 2220
+
+WELCOME TO THE UPPERCASE SHELL
+>>>
+
+
+TBD
 ```
