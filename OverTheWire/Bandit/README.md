@@ -1,8 +1,9 @@
-
 # OverTheWire - Bandit - Solutions
 
 **My solutions to the [Bandit wargame](https://overthewire.org/wargames/bandit/).**
+<br /><br />
 
+## Brief
 
 Solved using WSL:
  ```bash
@@ -21,15 +22,35 @@ $ ssh banditX@localhost   # from within bandit machine. X = level number.
 ```
 <br />
 
+## [Bandit0](https://overthewire.org/wargames/bandit/bandit0.html)
+**Level Goal**<br/>
+``
+The goal of this level is for you to log into the game using SSH.
+The host to which you need to connect is
+bandit.labs.overthewire.org, on port 2220.
+The username is bandit0 and the password is bandit0. Once
+logged in, go to the Level 1 page to find out how to beat Level
+1.
+``
 
-### [bandit0](https://overthewire.org/wargames/bandit/bandit0.html)
+**Solution**
 ```bash
-# bandit0 = password.
+$ ssh bandit0@bandit.labs.overthewire.org -p 2220
+bandit0                                              # bandit0's password .
 ```
 <br />
 
 
-### [bandit1](https://overthewire.org/wargames/bandit/bandit1.html)
+## [Bandit1](https://overthewire.org/wargames/bandit/bandit1.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a file called
+readme located in the home directory. Use this password to log
+into bandit1 using SSH. Whenever you find a password for a level,
+use SSH (on port 2220) to log into that level and continue the game.
+``
+
+**Solution**
 ```bash
 $ ssh bandit0@bandit.labs.overthewire.org -p 2220
 
@@ -39,7 +60,14 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1                     # bandit1's passsword.
 <br />
 
 
-### [bandit2](https://overthewire.org/wargames/bandit/bandit2.html)
+## [Bandit2](https://overthewire.org/wargames/bandit/bandit2.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a file called -
+located in the home directory
+``
+
+**Solution**
 ```bash
 $ ssh bandit1@bandit.labs.overthewire.org -p 2220
 
@@ -49,7 +77,14 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9                     # bandit2's passsword.
 <br />
 
 
-### [bandit3](https://overthewire.org/wargames/bandit/bandit3.html)
+## [Bandit3](https://overthewire.org/wargames/bandit/bandit3.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a file called spaces
+in this filename located in the home directory
+``
+
+**Solution**
 ```bash
 $ ssh bandit2@bandit.labs.overthewire.org -p 2220
 
@@ -59,7 +94,14 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK                     # bandit3's password.
 <br />
 
 
-### [bandit4](https://overthewire.org/wargames/bandit/bandit4.html)
+## [Bandit4](https://overthewire.org/wargames/bandit/bandit4.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a hidden file in the
+inhere directory.
+``
+
+**Solution**
 ```bash
 $ ssh bandit3@bandit.labs.overthewire.org -p 2220
 
@@ -71,7 +113,15 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB                     # bandit4's password.
 <br />
 
 
-### [bandit5](https://overthewire.org/wargames/bandit/bandit5.html)
+## [Bandit5](https://overthewire.org/wargames/bandit/bandit5.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the only human-readable
+file in the inhere directory. Tip: if your terminal is messed
+up, try the "reset" command.
+``
+
+**Solution**
 ```bash
 $ ssh bandit4@bandit.labs.overthewire.org -p 2220
 
@@ -93,7 +143,14 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh                     # bandit5's password.
 <br />
 
 
-### [bandit6](https://overthewire.org/wargames/bandit/bandit6.html)
+## [Bandit6](https://overthewire.org/wargames/bandit/bandit6.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a file somewhere under
+the inhere directory and has all of the following properties:
+``
+
+**Solution**
 ```bash
 $ ssh bandit5@bandit.labs.overthewire.org -p 2220
 
@@ -109,7 +166,14 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7                     # bandit6's password.
 <br />
 
 
-### [bandit7](https://overthewire.org/wargames/bandit/bandit7.html)
+## [Bandit7](https://overthewire.org/wargames/bandit/bandit7.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored somewhere on the
+server and has all of the following properties:
+``
+
+**Solution**
 ```bash
 $ ssh bandit6@bandit.labs.overthewire.org -p 2220
 
@@ -123,7 +187,14 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs                     # bandit7's password.
 <br />
 
 
-### [bandit8](https://overthewire.org/wargames/bandit/bandit8.html)
+## [Bandit8](https://overthewire.org/wargames/bandit/bandit8.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt
+next to the word millionth
+``
+
+**Solution**
 ```bash
 $ ssh bandit7@bandit.labs.overthewire.org -p 2220
 
@@ -133,7 +204,14 @@ millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV     # bandit8's password.
 <br />
 
 
-### [bandit9](https://overthewire.org/wargames/bandit/bandit9.html)
+## [Bandit9](https://overthewire.org/wargames/bandit/bandit9.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt
+and is the only line of text that occurs only once
+``
+
+**Solution**
 ```bash
 $ ssh bandit8@bandit.labs.overthewire.org -p 2220
 
@@ -143,7 +221,15 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR                     # bandit9's password.
 <br />
 
 
-### [bandit10](https://overthewire.org/wargames/bandit/bandit10.html)
+## [Bandit10](https://overthewire.org/wargames/bandit/bandit10.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt
+in one of the few human-readable strings, preceded by several '='
+characters.
+``
+
+**Solution**
 ```
 $ ssh bandit9@bandit.labs.overthewire.org -p 2220
 
@@ -157,7 +243,14 @@ Z)========== is
 <br />
 
 
-### [bandit11](https://overthewire.org/wargames/bandit/bandit11.html)
+## [Bandit11](https://overthewire.org/wargames/bandit/bandit11.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt,
+which contains base64 encoded data
+``
+
+**Solution**
 ```bash
 $ ssh bandit10@bandit.labs.overthewire.org -p 2220
 
@@ -167,7 +260,15 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR     # bandit11's password.
 <br />
 
 
-### [bandit12](https://overthewire.org/wargames/bandit/bandit12.html)
+## [Bandit12](https://overthewire.org/wargames/bandit/bandit12.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt,
+where all lowercase (a-z) and uppercase (A-Z) letters have been
+rotated by 13 positions
+``
+
+**Solution**
 ```bash
 $ ssh bandit11@bandit.labs.overthewire.org -p 2220
 
@@ -184,7 +285,18 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu     # bandit12's password.
 <br />
 
 
-### [bandit13](https://overthewire.org/wargames/bandit/bandit13.html)
+## [Bandit13](https://overthewire.org/wargames/bandit/bandit13.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in the file data.txt,
+which is a hexdump of a file that has been repeatedly compressed.
+For this level it may be useful to create a directory under /tmp in
+which you can work using mkdir. For example: mkdir /tmp/myname123.
+Then copy the datafile using cp, and rename it using mv (read the
+manpages!)
+``
+
+**Solution**
 ```bash
 $ ssh bandit12@bandit.labs.overthewire.org -p 2220
 
@@ -228,9 +340,21 @@ bandit12@bandit:~$ rm -rf /tmp/bt12
 <br />
 
 
-### [bandit14](https://overthewire.org/wargames/bandit/bandit14.html)
+## [Bandit14](https://overthewire.org/wargames/bandit/bandit14.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in
+/etc/bandit_pass/bandit14 and can only be read by user
+bandit14. For this level, you don't get the next password, but you
+get a private SSH key that can be used to log into the next level.
+Note: localhost is a hostname that refers to the machine
+you are working on
+``
+
+**Solution**
 ```bash
 $ ssh bandit13@bandit.labs.overthewire.org -p 2220
+
 bandit13@bandit:~$ ls
 sshkey.private
 
@@ -242,7 +366,14 @@ bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
 <br />
 
 
-### [bandit15](https://overthewire.org/wargames/bandit/bandit15.html)
+## [Bandit15](https://overthewire.org/wargames/bandit/bandit15.html)
+**Level Goal**<br/>
+``
+The password for the next level can be retrieved by submitting the
+password of the current level to port 30000 on localhost.
+``
+
+**Solution**
 ```bash
 $ ssh bandit14@bandit.labs.overthewire.org -p 2220
 
@@ -255,7 +386,15 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr                     # bandit15's password.
 <br />
 
 
-### [bandit16](https://overthewire.org/wargames/bandit/bandit16.html)
+## [Bandit16](https://overthewire.org/wargames/bandit/bandit16.html)
+**Level Goal**<br/>
+``
+The password for the next level can be retrieved by submitting the
+password of the current level to port 30001 on localhost using
+SSL encryption.
+``
+
+**Solution**
 ```bash
 $ ssh bandit15@bandit.labs.overthewire.org -p 2220
 
@@ -268,7 +407,18 @@ cluFn7wTiGryunymYOu4RcffSxQluehd                     # bandit16's password.
 <br />
 
 
-### [bandit17](https://overthewire.org/wargames/bandit/bandit17.html)
+## [Bandit17](https://overthewire.org/wargames/bandit/bandit17.html)
+**Level Goal**<br/>
+``
+The credentials for the next level can be retrieved by submitting the
+password of the current level to a port on localhost in the range
+31000 to 32000. First find out which of these ports have a server
+listening on them. Then find out which of those speak SSL and which
+don't. There is only 1 server that will give the next credentials, the
+others will simply send back to you whatever you send to it.
+``
+
+**Solution**
 ```bash
 $ ssh bandit16@bandit.labs.overthewire.org -p 2220
 
@@ -298,9 +448,18 @@ $ chmod 600 sshkey.private   # owner access only.
 <br />
 
 
-### [bandit18](https://overthewire.org/wargames/bandit/bandit18.html)
+## [Bandit18](https://overthewire.org/wargames/bandit/bandit18.html)
+**Level Goal**<br/>
+``
+There are 2 files in the homedirectory: passwords.old and
+passwords.new. The password for the next level is in
+passwords.new and is the only line that has been changed between
+passwords.old and passwords.new
+``
+
+**Solution**
 ```bash
-$ ssh -i sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
+$ ssh bandit17@bandit.labs.overthewire.org -p 2220
 
 bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
 > kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd                   # bandit18's password.
@@ -308,7 +467,15 @@ bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
 <br />
 
 
-### [bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
+## [Bandit19](https://overthewire.org/wargames/bandit/bandit19.html)
+**Level Goal**<br/>
+``
+The password for the next level is stored in a file readme in
+the homedirectory. Unfortunately, someone has modified .bashrc
+to log you out when you log in with SSH.
+``
+
+**Solution**
 ```bash
 # ssh with inline command because of auto logout by .bashrc.
 $ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat readme'
@@ -319,7 +486,16 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x                     # bandit19's password.
 <br />
 
 
-### [bandit20](https://overthewire.org/wargames/bandit/bandit20.html)
+## [Bandit20](https://overthewire.org/wargames/bandit/bandit20.html)
+**Level Goal**<br/>
+``
+To gain access to the next level, you should use the setuid binary
+in the homedirectory. Execute it without arguments to find out how
+to use it. The password for this level can be found in the usual
+place (/etc/bandit_pass), after you have used the setuid binary.
+``
+
+**Solution**
 ```bash
 $ ssh bandit19@bandit.labs.overthewire.org -p 2220
 
@@ -343,7 +519,18 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j                     # bandit20's password.
 <br />
 
 
-### [bandit21](https://overthewire.org/wargames/bandit/bandit21.html)
+## [Bandit21](https://overthewire.org/wargames/bandit/bandit21.html)
+**Level Goal**<br/>
+``
+There is a setuid binary in the homedirectory that does the
+following: it makes a connection to localhost on the port you
+specify as a commandline argument. It then reads a line of text from
+the connection and compares it to the password in the previous level
+(bandit20). If the password is correct, it will transmit the
+password for the next level (bandit21).
+``
+
+**Solution**
 ```bash
 $ ssh bandit20@bandit.labs.overthewire.org -p 2220
 
@@ -384,7 +571,15 @@ no server running on /tmp/tmux-11020/default
 <br />
 
 
-### [bandit22](https://overthewire.org/wargames/bandit/bandit22.html)
+## [Bandit22](https://overthewire.org/wargames/bandit/bandit22.html)
+**Level Goal**<br/>
+``
+A program is running automatically at regular intervals from
+cron, the time-based job scheduler. Look in /etc/cron.d/ for
+the configuration and see what command is being executed.
+``
+
+**Solution**
 ```bash
 $ ssh bandit21@bandit.labs.overthewire.org -p 2220
 
@@ -411,7 +606,15 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI                     # bandit22's password.
 <br />
 
 
-### [bandit23](https://overthewire.org/wargames/bandit/bandit23.html)
+## [Bandit23](https://overthewire.org/wargames/bandit/bandit23.html)
+**Level Goal**<br/>
+``
+A program is running automatically at regular intervals from
+cron, the time-based job scheduler. Look in /etc/cron.d/ for
+the configuration and see what command is being executed.
+``
+
+**Solution**
 ```bash
 $ ssh bandit22@bandit.labs.overthewire.org -p 2220
 
@@ -448,7 +651,15 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n                     # bandit23's password.
 <br />
 
 
-### [bandit24](https://overthewire.org/wargames/bandit/bandit24.html)
+## [Bandit24](https://overthewire.org/wargames/bandit/bandit24.html)
+**Level Goal**<br/>
+``
+A program is running automatically at regular intervals from
+cron, the time-based job scheduler. Look in /etc/cron.d/ for
+the configuration and see what command is being executed.
+``
+
+**Solution**
 ```bash
 $ ssh bandit23@bandit.labs.overthewire.org -p 2220
 
@@ -505,11 +716,20 @@ bandit23@bandit:/tmp/12082022$ cat password
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ                     # bandit24's password.
 
 bandit23@bandit:~$ rm -rf /tmp/12082022
-``` 
+```
 <br />
 
 
-### [bandit25](https://overthewire.org/wargames/bandit/bandit25.html)
+## [Bandit25](https://overthewire.org/wargames/bandit/bandit25.html)
+**Level Goal**<br/>
+``
+A daemon is listening on port 30002 and will give you the password for
+bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode.
+There is no way to retrieve the pincode except by going through all of the 10000
+combinations, called brute-forcing.
+``
+
+**Solution**
 ```bash
 $ ssh bandit24@bandit.labs.overthewire.org -p 2220
 
@@ -545,7 +765,15 @@ bandit24@bandit:~$ rm -rf /tmp/13082022
 <br />
 
 
-### [bandit26](https://overthewire.org/wargames/bandit/bandit26.html)
+## [Bandit26](https://overthewire.org/wargames/bandit/bandit26.html)
+**Level Goal**<br/>
+``
+Logging in to bandit26 from bandit25 should be fairly easy...
+The shell for user bandit26 is not /bin/bash, but something else.
+Find out what it is, how it works and how to break out of it.
+``
+
+**Solution**
 ```bash
 $ ssh bandit25@bandit.labs.overthewire.org -p 2220
 
@@ -581,11 +809,16 @@ bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost
 ```
 
 Now that the connection is not closed yet, we will press `v` to enter `vi`. Then, in command mode, we will type `:r /etc/bandit_pass/bandit26` followed by enter. We will receive bandit26's password: `5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z`.
-
 <br />
 
 
-### [bandit27](https://overthewire.org/wargames/bandit/bandit27.html)
+## [Bandit27](https://overthewire.org/wargames/bandit/bandit27.html)
+**Level Goal**<br/>
+``
+Good job getting a shell! Now hurry and grab the password for bandit27!
+``
+
+**Solution**
 ```bash
 # login to bandit25 first
 $ ssh bandit25@bandit.labs.overthewire.org -p 2220
@@ -608,8 +841,13 @@ bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
 <br />
 
 
+## [Bandit28](https://overthewire.org/wargames/bandit/bandit28.html)
+**Level Goal**<br/>
+``
+There is a git repository at ssh://[bandit27-git@localhost]/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27.
+``
 
-### [bandit28](https://overthewire.org/wargames/bandit/bandit28.html)
+**Solution**
 ```bash
 $ ssh bandit27@bandit.labs.overthewire.org -p 2220
 
@@ -639,7 +877,13 @@ bandit27@bandit:~$ rm -rf /tmp/13082022
 <br />
 
 
-### [bandit29](https://overthewire.org/wargames/bandit/bandit29.html)
+## [Bandit29](https://overthewire.org/wargames/bandit/bandit29.html)
+**Level Goal**<br/>
+``
+There is a git repository at ssh://[bandit28-git@localhost]/home/bandit28-git/repo. The password for the user bandit28-git is the same as for the user bandit28.
+``
+
+**Solution**
 ```bash
 $ ssh bandit28@bandit.labs.overthewire.org -p 2220
 
@@ -699,7 +943,13 @@ bandit27@bandit:~$ rm -rf /tmp/13082022
 <br />
 
 
-### [bandit30](https://overthewire.org/wargames/bandit/bandit30.html)
+## [Bandit30](https://overthewire.org/wargames/bandit/bandit30.html)
+**Level Goal**<br/>
+``
+There is a git repository at ssh://[bandit29-git@localhost]/home/bandit29-git/repo. The password for the user bandit29-git is the same as for the user bandit29.
+``
+
+**Solution**
 ```bash
 $ ssh bandit29@bandit.labs.overthewire.org -p 2220
 
@@ -757,7 +1007,13 @@ bandit29@bandit:~$ rm -rf /tmp/13082022
 <br />
 
 
-### [bandit31](https://overthewire.org/wargames/bandit/bandit31.html)
+## [Bandit31](https://overthewire.org/wargames/bandit/bandit31.html)
+**Level Goal**<br/>
+``
+There is a git repository at ssh://[bandit30-git@localhost]/home/bandit30-git/repo. The password for the user bandit30-git is the same as for the user bandit30.
+``
+
+**Solution**
 ```bash
 $ ssh bandit30@bandit.labs.overthewire.org -p 2220
 
@@ -776,7 +1032,13 @@ bandit30@bandit:/tmp/13082022/repo$ cd ~/ && rm -rf /tmp/13082022
 <br />
 
 
-### [bandit32](https://overthewire.org/wargames/bandit/bandit32.html)
+## [Bandit32](https://overthewire.org/wargames/bandit/bandit32.html)
+**Level Goal**<br/>
+``
+There is a git repository at ssh://[bandit31-git@localhost]/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31.
+``
+
+**Solution**
 ```bash
 $ ssh bandit31@bandit.labs.overthewire.org -p 2220
 
@@ -829,7 +1091,13 @@ bandit31@bandit:/tmp/13082022/repo$ cd ~/ && rm -rf /tmp/13082022
 <br />
 
 
-### [bandit33](https://overthewire.org/wargames/bandit/bandit33.html)
+## [Bandit33](https://overthewire.org/wargames/bandit/bandit33.html)
+
+``
+After all this git stuff its time for another escape. Good luck!
+``
+
+**Solution**
 ```bash
 # login with bandit31 first
 $ ssh bandit31@bandit.labs.overthewire.org -p 2220
@@ -862,10 +1130,17 @@ uppershell
 $ cat /etc/bandit_pass/bandit33
 c9c3199ddf4121b10cf581a98d51caee             # bandit33's password.
 ```
+<br />
 
 
-### [bandit34](https://overthewire.org/wargames/bandit/bandit34.html)
-```bash
+## [Bandit34](https://overthewire.org/wargames/bandit/bandit34.html)
+
+``
+At this moment, level 34 does not exist yet.
+``
+
+**Solution**
+```
 # login with bandit31 first
 $ ssh bandit33@bandit.labs.overthewire.org -p 2220
 
@@ -881,3 +1156,6 @@ In the meantime, you could play some of our other wargames.
 
 If you have an idea for an awesome new level, please let us know!
 ```
+<br />
+
+
