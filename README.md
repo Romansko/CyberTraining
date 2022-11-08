@@ -1,2 +1,2 @@
 # CyberTraining
-My cyber training stuff
+A collection of cyber related challenges.
