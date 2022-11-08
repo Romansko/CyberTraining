@@ -1,2 +1,2 @@
 # CyberTraining
-A collection of cyber related challenges.
+A collection of cyber related solved challenges.
